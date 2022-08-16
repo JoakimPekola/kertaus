@@ -1,0 +1,14 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anna celsius-astte");
+            double cel = double.Parse(Console.ReadLine());
+            Console.WriteLine("Farenhaitessa tuo celssius on {0}",cel*1.8+32);
+        }
+    }
+}
