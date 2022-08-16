@@ -1,0 +1,21 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("kirjoita sana");
+            string lause = Console.ReadLine();
+            int kok = lause.Length;
+            string eka = lause.Substring(0, 1);
+            string vika = lause.Substring(kok-1);
+            string sana = lause.Remove(kok - 1);
+            string kana = sana;
+            sana = kana.Remove(0,1);
+            kana = sana;
+            Console.WriteLine(vika+sana+eka);
+        }
+    }
+}
