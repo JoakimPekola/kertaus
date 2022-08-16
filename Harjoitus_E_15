@@ -1,0 +1,25 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("kirjoita lause");
+            string lause = Console.ReadLine();
+            string[] sanat = lause.Split(' ');
+            int las = sanat.Length;
+            int ni = 0, lon = 0;
+            for (int i = 0; i < las; i++)
+            {
+                if (sanat[i].Length > lon)
+                {
+                    lon = sanat[i].Length;
+                    ni = i;
+                }
+            }
+            Console.WriteLine("pisin sana lauseessasi on {0}",sanat[ni]);
+        }
+    }
+}
