@@ -1,0 +1,36 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] luvut = { 0, 0 };
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("{0}. Anna kokonais luku", i + 1);
+                luvut[i] = int.Parse(Console.ReadLine());
+            }
+            int luku1 = luvut[0];
+            int luku2 = luvut[1];
+            if (luku1>0 && luku2 > 0)
+            {
+                Console.WriteLine("molemmat on positiivisia");
+            }else if (luku1<0 && luku2 < 0)
+            {
+                Console.WriteLine("molemmat on negatiivisia");
+            }else if (luku1 >0 && luku2 < 0)
+            {
+                Console.WriteLine("toinen on positiivinen ja toinen negatiivinen");
+            }else if (luku1<0 && luku2 > 0)
+            {
+                Console.WriteLine("toinen on positiivinen ja toinen negatiivinen");
+            }
+            else
+            {
+                Console.WriteLine("jokin meni pieleen");
+            }
+        }
+    }
+}
