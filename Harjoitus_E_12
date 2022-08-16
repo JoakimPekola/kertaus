@@ -1,0 +1,22 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anna kokonaisluku joka on suurempi kuin 10");
+            int luku = int.Parse(Console.ReadLine());
+            for (int i =0;i < luku; i++)
+            {
+                Console.Write("{0} ", luku);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < luku; i++)
+            {
+                Console.Write("{0}", luku);
+            }
+        }
+    }
+}
