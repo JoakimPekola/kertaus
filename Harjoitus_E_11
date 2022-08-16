@@ -1,0 +1,14 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anna ikäsi");
+            int luku = int.Parse(Console.ReadLine());
+            Console.WriteLine("{0} - näytät ikääsi nuoremalta",luku);
+        }
+    }
+}
