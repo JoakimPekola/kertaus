@@ -1,0 +1,42 @@
+using System;
+
+namespace Harjoitus_B_yksi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Joakim Pekola");
+            Console.WriteLine("Anna X:n arvo");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Anna Y:n arvo");
+            int y = int.Parse(Console.ReadLine());
+            int xn = x;
+            int yn = y;
+            int tulos = y+3;
+            Console.WriteLine("1. X:n arvo on: {0}",tulos);
+            tulos = y - 2;
+            Console.WriteLine("2. X:n arvo on {0}",tulos);
+            tulos = y * 5;
+            Console.WriteLine("3. X:n arvo on {0}", tulos);
+            tulos = x / y;
+            Console.WriteLine("4. X:n arvo on {0}", tulos);
+            tulos = x % y;
+            Console.WriteLine("5. X:n arvo on {0}", tulos);
+            tulos = x += y;
+            Console.WriteLine("6. X:n arvo on {0}", tulos);
+            x = xn;
+            y = yn;
+            tulos = x -= y;
+            Console.WriteLine("7. X:n arvo on {0}", tulos);
+            x = xn;
+            y = yn;
+            tulos = x *= y * 5;
+            Console.WriteLine("8. X:n arvo on {0}", tulos);
+            x = xn;
+            y = yn;
+            tulos = x /= y;
+            Console.WriteLine("9. X:n arvo on {0}", tulos);
+        }
+    }
+}
