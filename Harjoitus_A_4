@@ -1,0 +1,12 @@
+using System;
+
+namespace Omanimi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Joakim Pekola");
+        }
+    }
+}
