@@ -1,0 +1,17 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anna kokonaisluku joka on 1-10");
+            int luku = int.Parse(Console.ReadLine());
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", luku, i,luku*i);
+            }
+        }
+    }
+}
