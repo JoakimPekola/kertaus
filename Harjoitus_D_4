@@ -1,0 +1,13 @@
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] luku = { 5, 2 };
+            double jakoj = 0;
+            jakoj = luku[0] % luku[1];
+            Console.WriteLine("jakojäännös on {0}", jakoj);
+        }
+    }
+}
