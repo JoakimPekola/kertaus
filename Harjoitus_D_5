@@ -1,0 +1,14 @@
+using System;
+
+namespace d
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Anna nimi");
+            string nimi = Console.ReadLine();
+            Console.WriteLine("Hei {0}", nimi);
+        }
+    }
+}
