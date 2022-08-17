@@ -1,0 +1,19 @@
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] luku = { 8, 5 };
+            double summa = 0, erotus = 0, kerto = 0, jako = 0;
+            summa = luku[0] + luku[1];
+            erotus = luku[0] - luku[1];
+            kerto = luku[0] * luku[1];
+            jako = luku[0] / luku[1];
+            Console.WriteLine("summa on {0}", summa);
+            Console.WriteLine("erotus on {0}", erotus);
+            Console.WriteLine("kerto on {0}", kerto);
+            Console.WriteLine("jako on {0}", jako);
+        }
+    }
+}
