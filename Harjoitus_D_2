@@ -1,0 +1,12 @@
+using System;
+
+namespace Harjotus_D
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Farenhaitessa tuo celssius on {0}", 10 * 1.8 + 32);
+        }
+    }
+}
