@@ -7,63 +7,73 @@ namespace Harjoitsu_c_loppu
         static void Main(string[] args)
         {
             Console.WriteLine("Joakim Pekola");
-            string[] eka = { "nolla", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista", "kaksitoista", "kolmetoista", "neljätoista", "viisitoista", "kuusitoista", "seitsemäntoista", "kahdeksantoista", "yhdeksäntoista" };
-            string[] toka = { "kaksikymmentä", "kolmekummmentä", "neljäkymmentä", "viisikymmentä", "kuusikymmentä", "seitsemänkymmentä", "kahdeksankymmentä", "yhdeksänkymmentä" };
-            Console.WriteLine("Anna luku joka on 0-999");
+            string[] eka = { "nolla", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista", "kaksitoista", "kolmetoista", "neljätoista", "viisitoista", "kuusitoista", "seitsemäntoista", "kahdeksantoista", "yhdeksäntoista" };//tallenetaan sanoja
+            string[] toka = { "kaksikymmentä", "kolmekummmentä", "neljäkymmentä", "viisikymmentä", "kuusikymmentä", "seitsemänkymmentä", "kahdeksankymmentä", "yhdeksänkymmentä" };//tallenetaan sanoja
+            Console.WriteLine("Anna luku joka on 0-999");//kysytään lukua 0-999
             string luku = Console.ReadLine();
-            if (int.Parse(luku) > -1 && int.Parse(luku) < 20)
+            if (int.Parse(luku) > -1 && int.Parse(luku) < 20)//tulostetaan numerot 0-19
             {
                 Console.WriteLine(eka[int.Parse(luku)]);
             }
-            else if (int.Parse(luku) < 100 && int.Parse(luku) > 19)
+            else if (int.Parse(luku) < 100 && int.Parse(luku) > 19)//tulostetaan numerot 20-99
             {
-                int fuu = int.Parse(luku.Substring(0,1));
+                int fuu = int.Parse(luku.Substring(0, 1));
                 int boo = 0;
-                if (!luku.EndsWith("0"))
+                if (!luku.EndsWith("0"))// tulostetaan luvut jotka on jaollisia kymmenellä
                 {
                     boo = int.Parse(luku.Substring(1));
-                    
+                    Console.WriteLine("{0} {1}", toka[fuu - 2], eka[boo]);
                 }
-                if (!luku.EndsWith("0"))
-                {
-                    Console.WriteLine("{0} {1}", toka[fuu-2], eka[boo]);
-                }
-                if (luku.EndsWith("0"))
+                if (luku.EndsWith("0"))//tulostetaan luvut jotka on haollisia kummenellä
                 {
                     Console.WriteLine("{0}", toka[fuu - 2]);
                 }
             }
-            else if (int.Parse(luku)>99 && int.Parse(luku) < 1000)
+            else if (int.Parse(luku) > 99 && int.Parse(luku) < 1000)//tulostetaan luvut 100-999
             {
-                if (int.Parse(luku) <200)
+                if (int.Parse(luku) < 200)//tulostetaan luvut 100-199
                 {
-                    if (int.Parse(luku)==100)
+                    if (int.Parse(luku) == 100)//tulostetaan jos luku on 100
                     {
                         Console.WriteLine("sata");
                     }
-                    else if (int.Parse(luku)>100 && int.Parse(luku)<110)
+                    else if (int.Parse(luku) > 100 && int.Parse(luku) < 110)//tulostetaan 101-109
                     {
                         int fuu = int.Parse(luku.Substring(2));
-                        Console.WriteLine("sata {0}",eka[fuu]);
-                    }else if(int.Parse(luku)>109 && int.Parse(luku) < 120)
+                        Console.WriteLine("sata {0}", eka[fuu]);
+                    }
+                    else if (int.Parse(luku) > 109 && int.Parse(luku) < 120)//tulostetaan 110-119
                     {
                         int boo = int.Parse(luku.Substring(1));
                         Console.WriteLine("sata {0}", eka[boo]);
-                    }else if(int.Parse(luku)>119 && int.Parse(luku)< 200)
+                    }
+                    else if (int.Parse(luku) > 119 && int.Parse(luku) < 200)//tulostetaan luvut 120-199
                     {
-                        int boo = int.Parse(luku.Substring(1,1));
+                        int boo = int.Parse(luku.Substring(1, 1));
                         int fuu = int.Parse(luku.Substring(2));
-                        if (luku.EndsWith("0"))
+                        if (luku.EndsWith("0"))//tulostetaan jos on jaollinen kymmenellä
                         {
-                            Console.WriteLine("sata {0}", toka[boo-2]);
+                            Console.WriteLine("sata {0}", toka[boo - 2]);
                         }
-                        else
+                        else//tulostetaan jos ei ole jaolinne kymmenellä
                         {
                             Console.WriteLine("sata {0} {1}", toka[boo - 2], eka[fuu]);
                         }
                     }
                 }
-                else
+                else if (luku.Substring(1) == "00")//tulostetaan luvut jotka on jaollisia sadalla esim 100,200,300...
+                {
+                    Console.WriteLine("{0}", eka[int.Parse(luku.Substring(0,1))]+"sataa");
+                }
+                else if (int.Parse(luku.Substring(2)) == 0)//tulostetaan luvut jotka on yli 200 ja niissä ei ole ykkösiä
+                {
+                    Console.WriteLine("{0} {1}",eka[int.Parse(luku.Substring(0,1))]+"sataa",toka[int.Parse(luku.Substring(1,1))-2]);
+                }
+                else if (int.Parse(luku.Substring(1, 1)) == 0)//tulostetaan luvut jotka on yli 200 ja niissä ei ole kymppejä
+                {
+                    Console.WriteLine("{0} {1}", eka[int.Parse(luku.Substring(0,1))]+"sataa", eka[int.Parse(luku.Substring(2))]);
+                }
+                else//tulostetaan luvut jotka on yli 200 ja niissä ei ole nollia
                 {
                     int guu = int.Parse(luku.Substring(0, 1));
                     int boo = int.Parse(luku.Substring(1, 1));
@@ -71,7 +81,7 @@ namespace Harjoitsu_c_loppu
                     Console.WriteLine("{0} {1} {2}", eka[guu] + "sataa", toka[boo - 2], eka[fuu]);
                 }
             }
-            else
+            else//jos ei ole numero 0-999
             {
                 Console.WriteLine("jokin meni pieleen");
             }
